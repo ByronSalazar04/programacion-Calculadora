@@ -1,40 +1,46 @@
 #include <iostream>
-#include <studio.h>
-#include <math.h>
-int edad = 0;
-float valor1 = 0;
-float valor2 = 0;
-float resultado = 0;
 
-void main()
-{
-    suma();
-	resta();
-	multiplicacion();
-	division();
-    printf("Calculadora")
+float suma(float valor1, float valor2) {
+    return valor1 + valor2;
 }
 
-float suma(){
-   resultado =  valor1 + valor2
-    return resultado;
-    printf("El resultado es " , resultado);
+float resta(float valor1, float valor2) {
+    return valor1 - valor2;
 }
 
-float resta(){
-    resultado =  valor1 - valor2
-    return resultado;
-    printf("El resultado es " , resultado);
+float multiplicacion(float valor1, float valor2) {
+    return valor1 * valor2;
 }
 
-float multiplicacion(){
-    resultado =  valor1 * valor2
-    return resultado;
-    printf("El resultado es " , resultado);
+float division(float valor1, float valor2) {
+    if (valor2 != 0) {
+        return valor1 / valor2;
+    } else {
+        std::cout << "Error: No se puede dividir por cero." << std::endl;
+        return 0;
+    }
 }
 
-float division(){
-    resultado =  valor1 / valor2
-    return resultado;
-    printf("El resultado es " , resultado);
+int main() {
+    float valor1, valor2, resultado;
+    
+    std::cout << "Ingrese el primer valor: ";
+    std::cin >> valor1;
+    
+    std::cout << "Ingrese el segundo valor: ";
+    std::cin >> valor2;
+
+    resultado = suma(valor1, valor2);
+    std::cout << "Suma: " << resultado << std::endl;
+
+    resultado = resta(valor1, valor2);
+    std::cout << "Resta: " << resultado << std::endl;
+
+    resultado = multiplicacion(valor1, valor2);
+    std::cout << "Multiplicacion: " << resultado << std::endl;
+
+    resultado = division(valor1, valor2);
+    std::cout << "Division: " << resultado << std::endl;
+
+    return 0;
 }
